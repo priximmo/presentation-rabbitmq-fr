@@ -1,0 +1,16 @@
+https://fulmanski.pl/tutorials/computer-science/big-data/basics-of-messaging-with-rabbitmq/
+
+
+Exchanges
+
+• Direct - A direct exchange delivers messages to queues based on a message routing
+key. In a direct exchange, the message is routed to the queue with the exact match
+of binding key as the routing key of the message. For example, if the queue is bound
+to the exchange using the binding key ‘pdfprocess’, a message published to the
+exchange with a routing key ‘pdfprocess’ is routed to that queue.
+• Topic - The topic exchange performs a wildcard match between the routing key and
+the routing pattern specified in the binding.
+• Fanout - A fanout exchange routes messages to all of the queues that are bound to
+it.
+• Headers - A header exchange uses the message header attributes for routing
+purposes.
