@@ -25,6 +25,13 @@ PRODUCER
 
 	* envoi du message
 
+	* utilisation d'un user/password
+
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
 <br>
 
 BROKER
@@ -37,6 +44,12 @@ BROKER
 
 	* gestion sécurité (user/vhost...)
 
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
+<br>
 <br>
 
 CONSUMER
@@ -45,11 +58,27 @@ CONSUMER
 
 	* consomment les messages
 
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
 <br>
 
 MESSAGE
 
-	* 
+	* différents type
+
+	* dipose de headers et & metadonnées
+
+	* ordonnés
+
+	* peuvent être répliqués ou non 
+
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
 
 <br>
 
@@ -57,29 +86,10 @@ ROLES
 
 	Producer > Broker > Consumer
 
-<br>
+---------------------------------------------------------------------------
 
-BROKER - EXCHANGES
+# RABBITMQ : DEFINITIONS & CONCEPTS
 
-	* responsable de la réception des messages
-
-	* différents types : direct / fanout / topic / headers 
-
-<br>
-
-BROKER - EXCHANGES - Binding
-
-	* lien (connexion) d'un échange à une queue
-
-	* différent de la routing key (niveau messages)
-
-<br>
-
-BROKER - EXCHANGES - Routing Key
-
-	* routing des messages via une clef de chacun des messages
-
-	* couplé au type d'exchange
 
 <br>
 
@@ -97,6 +107,50 @@ BROKER - CHANNEL
 )
 ```
 
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
+<br>
+
+BROKER - EXCHANGES
+
+	* responsable de la réception des messages
+
+	* différents types : direct / fanout / topic / headers 
+
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
+<br>
+
+BROKER - EXCHANGES - Binding
+
+	* lien (connexion) d'un exchange à une queue
+
+	* différent de la routing key (niveau messages)
+
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
+<br>
+
+BROKER - EXCHANGES - Routing Key
+
+	* routing des messages via une clef de chacun des messages
+
+	* couplé au type d'exchange
+
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
 <br>
 
 BROKER - QUEUES
@@ -107,6 +161,11 @@ BROKER - QUEUES
 
 	* durabilité 
 
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+
 <br>
 
 BROKER - VHOST
@@ -115,5 +174,10 @@ BROKER - VHOST
 
 	* sur un ou plusieurs broker
 
+---------------------------------------------------------------------------
+
+# RABBITMQ : DEFINITIONS & CONCEPTS
+
+<br>
 
   Producer > Channel > Exchange > Binding > Routing Key > Queue > Consumer
