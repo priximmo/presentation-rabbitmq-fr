@@ -57,5 +57,18 @@ Différents types d'exchanges :
 
 		* headers
 
+<br>
 
+DEFAULT EXCHANGE :
 
+		* sans nom
+
+		* pré-déclaré (rien à faire)
+
+		* automatique > nom de queue = routing key = default exchange
+
+		* le plus simple montage direct de la queue dans l'exchange
+
+<br>
+
+DIRECT EXCHANGE

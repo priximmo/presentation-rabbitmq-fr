@@ -14,3 +14,17 @@ the routing pattern specified in the binding.
 it.
 • Headers - A header exchange uses the message header attributes for routing
 purposes.
+
+
+https://www.rabbitmq.com/memory-use.html
+
+https://www.rabbitmq.com/management-cli.html
+https://www.rabbitmq.com/relocate.html
+RabbitMQ CLI Tools: general installation and usage topics
+rabbitmqctl: primary RabbitMQ CLI tool
+rabbitmq-diagnostics: monitoring, health checking, observability tooling
+rabbitmq-plugins: plugin management
+rabbitmq-queues: operations on quorum queues
+rabbitmqadmin (HTTP API-based zero dependency management tool)
+
+
