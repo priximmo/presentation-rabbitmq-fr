@@ -28,3 +28,5 @@ rabbitmq-queues: operations on quorum queues
 rabbitmqadmin (HTTP API-based zero dependency management tool)
 
 
+
+https://www.rabbitmq.com/tutorials/amqp-concepts.html#message-acknowledge
