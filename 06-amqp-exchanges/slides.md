@@ -12,7 +12,7 @@ PROTOCOL AMQP 0-9-1
 
 * Publishers > Brokers > Consumers
 
-	> Publishers > Exchanges > Queues > Consumers
+	Publishers > Exchanges > Queues > Consumers
 
 * Exchange = distribue les messages dans le/les queues
 
@@ -22,7 +22,7 @@ PROTOCOL AMQP 0-9-1
 
 * Routing = metadatas > règles de distribution
 
-* un message déliveré est acquité > suppression de la queue
+* un message délivré est acquité > suppression de la queue
 
 * différents comportements si non routé (supprimés, retourné...)
 
