@@ -1,0 +1,31 @@
+http:
+  address: 0.0.0.0:4196
+#https://www.benthos.dev/docs/components/inputs/generate
+
+input:
+  generate:
+    count: 1000000
+    interval: ""
+    mapping: |
+      root.received_at = now()
+      root.message = "Je suis un message " + random_int().string()
+      root.id = uuid_v4()
+      root.host = hostname()
+#https://www.benthos.dev/docs/components/outputs/file
+
+output:
+#  file:
+#    path: /tmp/xavki.txt
+#    codec: lines
+
+#https://www.benthos.dev/docs/components/outputs/amqp_0_9
+
+  amqp_0_9:
+    urls: 
+      - amqp://xavki:password@192.168.12.48:5672/
+    exchange: "e.q1"
+    key: "xavki"
+    type: ""
+    metadata:
+      exclude_prefixes: []
+    max_in_flight: 100000
