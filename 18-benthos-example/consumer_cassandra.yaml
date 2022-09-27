@@ -1,0 +1,19 @@
+input:
+  amqp_0_9:
+    urls:
+      - amqp://xavki:password@192.168.12.48:5672/
+    queue: "q1"
+
+output:
+  cassandra:
+    addresses:
+      - 127.0.0.1:9042
+    query: 'INSERT INTO rmq.t1 (id, received_at, message, host) VALUES (?, ?, ?, ?)'
+    args_mapping: |
+      root = [
+        this.id,
+        this.received_at,
+        this.message,
+        this.host
+      ]
+
