@@ -65,16 +65,6 @@ spec:
             secretKeyRef:
               name: rabbitmq-secret
               key: RABBITMQ_ERLANG_COOKIE
-        - name: RABBITMQ_DEFAULT_USER
-          valueFrom:
-            secretKeyRef:
-              name: rabbitmq-secret
-              key: RABBITMQ_DEFAULT_USER
-        - name: RABBITMQ_DEFAULT_PASS
-          valueFrom:
-            secretKeyRef:
-              name: rabbitmq-secret
-              key: RABBITMQ_DEFAULT_PASS
         - name: K8S_HOSTNAME_SUFFIX
           value: .rabbitmq.$(RABBIT_POD_NAMESPACE).svc.cluster.local
         volumeMounts:
