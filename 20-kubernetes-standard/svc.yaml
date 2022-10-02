@@ -1,0 +1,22 @@
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: rabbitmq
+  name: rabbitmq
+  labels:
+    app: rabbitmq
+spec:
+  clusterIP: None
+  ports:
+  ports:
+  - port: 4369
+    targetPort: 4369
+    name: discovery
+  - port: 5672
+    targetPort: 5672
+    name: amqp
+  - port: 15672
+    targetPort: 15672
+    name: gui
+  selector:
+    app: rabbitmq
