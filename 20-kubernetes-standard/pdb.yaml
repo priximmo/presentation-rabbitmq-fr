@@ -1,9 +1,10 @@
-    apiVersion: policy/v1beta1
-    kind: PodDisruptionBudget
-    metadata:
-      name: rabbitmq
-    spec:
-      maxUnavailable: 1
-      selector:
-        matchLabels:
-          app: rabbitmq
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: rabbitmq
+  namespace: rabbitmq
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: rabbitmq

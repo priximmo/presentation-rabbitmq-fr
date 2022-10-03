@@ -8,7 +8,6 @@ metadata:
 spec:
   clusterIP: None
   ports:
-  ports:
   - port: 4369
     targetPort: 4369
     name: discovery

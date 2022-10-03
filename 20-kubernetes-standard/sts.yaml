@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq
+  namespace: rabbitmq
 spec:
   serviceName: rabbitmq
   replicas: 3
@@ -44,6 +45,13 @@ spec:
           name: discovery
         - containerPort: 5672
           name: amqp
+        resources:
+          limits:
+            cpu: 1
+            memory: 1Gi
+          requests:
+            cpu: 1
+            memory: 500Mi
         env:
         - name: RABBIT_POD_NAME
           valueFrom:

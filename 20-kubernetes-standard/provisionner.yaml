@@ -12,5 +12,5 @@ spec:
   values:
     nfs:
       server: 192.168.12.20
-      path: /srv/provisionner/
+      path: /srv/rabbitmq/
 
