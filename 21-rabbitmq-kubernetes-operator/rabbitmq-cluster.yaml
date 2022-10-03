@@ -1,0 +1,33 @@
+kind: RabbitmqCluster
+metadata:
+  name: xavki-rabbitmq
+  namespace: rabbitmq
+spec:
+  replicas: 3
+  persistence:
+    storageClassName: nfs-client
+    storage: 200Mi
+  resources:
+    requests:
+      cpu: 1
+      memory: 500Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+  rabbitmq:
+    additionalConfig: |
+      loopback_users.guest = false
+      listeners.tcp.default = 5672
+      cluster_formation.peer_discovery_backend  = rabbitmq_peer_discovery_k8s
+      cluster_formation.k8s.host = kubernetes.default.svc.cluster.local
+      cluster_formation.k8s.address_type = hostname
+      cluster_formation.node_cleanup.only_log_warning = true
+    additionalPlugins:
+      - rabbitmq_federation
+      - rabbitmq_management
+      - rabbitmq_peer_discovery_k8s
+  override:
+    statefulSet:
+      spec:
+        podManagementPolicy: "OrderedReady"
+
