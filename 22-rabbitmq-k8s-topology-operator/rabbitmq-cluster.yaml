@@ -17,12 +17,15 @@ spec:
       memory: 1Gi
   rabbitmq:
     additionalConfig: |
-      loopback_users.guest = false
+      #loopback_users.guest = false
       listeners.tcp.default = 5672
       cluster_formation.peer_discovery_backend  = rabbitmq_peer_discovery_k8s
       cluster_formation.k8s.host = kubernetes.default.svc.cluster.local
       cluster_formation.k8s.address_type = hostname
       cluster_formation.node_cleanup.only_log_warning = true
+      #default_user = xavki
+      #default_pass = password
+      vm_memory_high_watermark_paging_ratio = 0.70
     additionalPlugins:
       - rabbitmq_federation
       - rabbitmq_management

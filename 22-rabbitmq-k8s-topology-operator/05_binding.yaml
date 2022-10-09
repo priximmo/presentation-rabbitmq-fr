@@ -1,0 +1,12 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: bind1
+  namespace: rabbitmq
+spec:
+  source: ex1
+  destination: q1
+  destinationType: queue
+  routingKey: "xavki"
+  rabbitmqClusterReference:
+    name: xavki-rabbitmq

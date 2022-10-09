@@ -1,0 +1,8 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Vhost
+metadata:
+  name: vhost1
+spec:
+  name: vhost1
+  rabbitmqClusterReference:
+    name: xavki-rabbitmq
