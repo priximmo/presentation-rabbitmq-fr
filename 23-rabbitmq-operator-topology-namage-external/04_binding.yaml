@@ -1,0 +1,15 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: ext-bind1
+  namespace: rabbitmq2
+spec:
+  vhost: vhost2
+  source: ex1
+  destination: q1
+  destinationType: queue
+  routingKey: "xavki"
+  rabbitmqClusterReference:
+    connectionSecret:
+      name: external-rabbitmq
+

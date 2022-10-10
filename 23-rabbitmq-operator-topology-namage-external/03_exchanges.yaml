@@ -1,0 +1,15 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: ext-ex1
+  namespace: rabbitmq2
+spec:
+  name: ex1
+  type: direct
+  vhost: vhost2
+  autoDelete: false
+  durable: true
+  rabbitmqClusterReference:
+    connectionSecret:
+      name: external-rabbitmq
+

@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: external-rabbitmq
+  namespace: rabbitmq2
+type: Opaque
+stringData:
+  username: xavki
+  password: password
+  uri: http://192.168.12.49:15672

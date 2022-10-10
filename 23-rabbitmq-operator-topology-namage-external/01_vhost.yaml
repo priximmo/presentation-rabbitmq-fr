@@ -1,0 +1,11 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Vhost
+metadata:
+  name: ext-vhost2
+  namespace: rabbitmq2
+spec:
+  name: vhost2
+  rabbitmqClusterReference:
+    connectionSecret:
+      name: external-rabbitmq
+
