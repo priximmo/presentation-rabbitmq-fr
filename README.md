@@ -1,4 +1,4 @@
-Enter a playlist ID : Playlist : https://www.youtube.com/playlist?list=PLn6POgpklwWqiqKEriklbvbSd60-weOqh
+Playlist : https://www.youtube.com/playlist?list=PLn6POgpklwWqiqKEriklbvbSd60-weOqh
 
 - 1. [RABBITMQ - 00. Sommaire & Tutoriels](https://www.youtube.com/watch?v=w1-mmPvs1Tk)
 - 2. [RABBITMQ - 01. Introduction](https://www.youtube.com/watch?v=yDpJiJmf1wo)
