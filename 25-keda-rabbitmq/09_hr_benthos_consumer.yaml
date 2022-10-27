@@ -1,0 +1,26 @@
+
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: benthos-consumer
+  namespace: rabbitmq
+spec:
+  releaseName: benthos-consumer
+  chart:
+    name: benthos
+    version: 0.6.0
+    repository: https://benthosdev.github.io/benthos-helm-chart/
+  values:
+    config: |-
+      input:
+        amqp_0_9:
+          urls: 
+            - amqp://xavki:password@xavki-rabbitmq.rabbitmq.svc.cluster.local:5672/
+          queue: "q1"
+      pipeline:
+        processors:
+        - log:
+            level: INFO
+            fields_mapping: |
+              root.message = this.message

@@ -1,0 +1,32 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: benthos-producer
+  namespace: rabbitmq
+spec:
+  releaseName: benthos-producer
+  chart:
+    name: benthos
+    version: 0.6.0
+    repository: https://benthosdev.github.io/benthos-helm-chart/
+  values:
+    config: |-
+      input:
+        generate:
+          count: 2000000
+          interval: "0.001s"
+          mapping: |
+            root.received_at = now()
+            root.message = "Je suis un message " + random_int().string()
+            root.id = uuid_v4()
+            root.host = hostname()
+      output:
+        amqp_0_9:
+          urls: 
+            - amqp://xavki:password@xavki-rabbitmq.rabbitmq.svc.cluster.local:5672/
+          exchange: "ex1"
+          key: "xavki"
+          metadata:
+            exclude_prefixes: []
+          max_in_flight: 100000

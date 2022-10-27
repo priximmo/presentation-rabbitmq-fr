@@ -1,0 +1,12 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: ex1
+  namespace: rabbitmq
+spec:
+  name: ex1
+  type: direct
+  autoDelete: false
+  durable: true
+  rabbitmqClusterReference:
+    name: xavki-rabbitmq

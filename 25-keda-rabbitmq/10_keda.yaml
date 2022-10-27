@@ -1,0 +1,27 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: keda
+  namespace: keda
+spec:
+  releaseName: kedacore
+  chart:
+    name: keda
+    version: 2.8.0
+    repository: https://kedacore.github.io/charts
+  values:
+    crds:
+      install: true
+    operator:
+      name: keda-operator
+      replicaCount: 1
+    metricsServer:
+      dnsPolicy: ClusterFirst
+      useHostNetwork: false
+    rbac:
+      create: true
+    serviceAccount:
+      create: true
+      name: keda-operator
+

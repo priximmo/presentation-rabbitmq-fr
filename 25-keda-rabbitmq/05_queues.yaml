@@ -1,0 +1,13 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: q1
+  namespace: rabbitmq
+spec:
+  name: q1
+  type: quorum
+  autoDelete: false
+  durable: true
+  rabbitmqClusterReference:
+    name: xavki-rabbitmq
+
